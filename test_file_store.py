@@ -16,7 +16,8 @@ import unittest
 class FileStoreTest(unittest.TestCase):
     def setUp(self):
         self.mockHash = MagicMock(return_value=HASH_RETURN_VALUE)
-        self.store = file_store.FileStore(self.mockHash)
+        self.mockHandleDuplicateFiles = MagicMock()
+        self.store = file_store.FileStore(self.mockHandleDuplicateFiles, self.mockHash)
 
     def test_can_add_file_to_file_store(self):
         self.store.Add("myFile")
@@ -35,6 +36,12 @@ class FileStoreTest(unittest.TestCase):
         self.store.Add("myFileWithSameContent")
 
         self.assertEqual(self.store.file_set, { HASH_RETURN_VALUE })
+
+    def test_adding_a_duplicate_file_calls_the_duplicate_file_handling_function(self):
+        self.store.Add("myFile")
+        self.store.Add("myFileWithSameContent")
+
+        self.mockHandleDuplicateFiles.assert_called_once_with("myFileWithSameContent")
 
 if __name__ == '__main__':
     unittest.main()
