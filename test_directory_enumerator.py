@@ -14,7 +14,7 @@ class DirectoryEnumeratorTest(unittest.TestCase):
         expectArgsList = [ call("MyTestDir/MyFile")]
         self.assertEqual(mockFileHandle.call_args_list, expectArgsList)
 
-    @patch("os.walk", MagicMock(return_value=[('MyTestDir', ['MyFile', ], []), ]))
+    @patch("os.walk", MagicMock(return_value=[('MyTestDir', [], ['MyFile', ]), ]))
     @patch("os.path.join", MagicMock(side_effect=lambda *x: "/".join(x)))
     def test_default_file_enumerator(self):
         mockFileHandle = MagicMock()

@@ -15,7 +15,8 @@ import unittest
 @patch('io.open', MagicMock())
 class FileStoreTest(unittest.TestCase):
     def setUp(self):
-        self.mockHash = MagicMock(return_value=HASH_RETURN_VALUE)
+        self.mockHash = MagicMock()
+        self.mockHash.return_value.digest.return_value=HASH_RETURN_VALUE
         self.mockHandleDuplicateFiles = MagicMock()
         self.store = file_store.FileStore(self.mockHandleDuplicateFiles, self.mockHash)
 
@@ -26,7 +27,7 @@ class FileStoreTest(unittest.TestCase):
 
     def test_adding_different_file_adds_another_entry_to_the_dictionary(self):
         self.store.Add("myFile")
-        self.mockHash.return_value= DIFFERENT_HASH_RETURN_VALUE
+        self.mockHash.return_value.digest.return_value = DIFFERENT_HASH_RETURN_VALUE
         self.store.Add("myOtherFile")
 
         self.assertEqual(self.store.file_set, { HASH_RETURN_VALUE, DIFFERENT_HASH_RETURN_VALUE})

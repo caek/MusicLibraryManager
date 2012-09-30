@@ -3,7 +3,7 @@ import os
 __author__ = 'rlaycock'
 
 def enum_files_in_directory(directory_name):
-    for dir_name, file_list, dir_list in os.walk(directory_name):
+    for dir_name, dir_list, file_list in os.walk(directory_name):
         for file_name in file_list:
             yield os.path.join(dir_name, file_name)
 
