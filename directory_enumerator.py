@@ -5,7 +5,7 @@ __author__ = 'rlaycock'
 def enum_files_in_directory(directory_name):
     for dir_name, file_list, dir_list in os.walk(directory_name):
         for file_name in file_list:
-            yield os.join(dir_name, file_name)
+            yield os.path.join(dir_name, file_name)
 
 class DirectoryEnumerator(object):
     def __init__(self, file_handler, file_enumerator=enum_files_in_directory):
