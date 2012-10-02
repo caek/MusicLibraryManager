@@ -5,13 +5,10 @@ from mutagen.id3 import BitPaddedInt
 __author__ = 'chaynes'
 
 def _id3_trailer_length(f):
-    try:
-        f.seek(-128, io.SEEK_END)
-        idata = f.read(3)
-        if idata == "TAG":
-            return 128
-    except IOError:
-        pass
+    f.seek(-128, io.SEEK_END)
+    idata = f.read(3)
+    if idata == "TAG":
+        return 128
     return 0
 
 def _id3_header_length(f):
@@ -24,7 +21,7 @@ def _id3_header_length(f):
         insize = BitPaddedInt(insize)
         if id3 == 'ID3' and 0 <= insize <= end - 10:
             return insize + 10
-    except (IOError, struct.error):
+    except struct.error:
         pass
     return 0
 

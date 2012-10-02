@@ -6,7 +6,8 @@ __author__ = 'chaynes'
 
 import unittest
 
-MP3_DATA = '12345' + '\x00' * 200
+SHORT_DATA = '12345'
+MP3_DATA = SHORT_DATA + '\x00' * 200
 
 ID3_HEADER = 'ID3\x00\x00\x00\x00\x00\x00\x01\x00'
 ID3_TRAILER = 'TAG' + '\x00' * (128 - len('TAG'))
@@ -36,6 +37,12 @@ class Mp3FileTest(unittest.TestCase):
         mp3 = mp3_file.Mp3File("myMp3File")
 
         self.assertEqual(MP3_DATA, mp3.data())
+
+    @patch('io.open', MagicMock(return_value=io.BytesIO(SHORT_DATA)))
+    def test_reading_file_with_short_data_returns_mp3_data(self):
+        mp3 = mp3_file.Mp3File("myMp3File")
+
+        self.assertEqual(SHORT_DATA, mp3.data())
 
 if __name__ == '__main__':
     unittest.main()

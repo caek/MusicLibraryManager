@@ -1,5 +1,6 @@
 import hashlib
 import io
+import mp3_file
 
 __author__ = 'rlaycock'
 
@@ -10,9 +11,9 @@ class FileStore(object):
         self.duplicateFileHandler = duplicateFileHandler
 
     def Add(self, file_name):
-        with io.open(file_name, 'rb') as f:
-            hash = self.hasher(f.read()).digest()
-            if hash in self.file_set:
-                self.duplicateFileHandler(file_name)
-            else:
-                self.file_set.add(hash)
+        f = mp3_file.Mp3File(file_name)
+        hash = self.hasher(f.data()).digest()
+        if hash in self.file_set:
+            self.duplicateFileHandler(file_name)
+        else:
+            self.file_set.add(hash)
