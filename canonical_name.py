@@ -1,39 +1,32 @@
-import canonical_name
-from mock import  Mock, patch
+import re
+import mutagen.easyid3
+import os
 
 __author__ = 'chaynes'
 
-import unittest
+class CanonicalName(object):
+    def __init__(self, name):
+        self.id3 = mutagen.easyid3.EasyID3(name)
 
-@patch('os.path.join', Mock(side_effect=lambda *x: '/'.join(x)))
-class CanonicalNameTest(unittest.TestCase):
-    def setUp(self):
-        self.dict = {'artist': 'test_artist',
-                     'album': 'test_album',
-                     'title': 'test_title'}
-        patcher = patch('mutagen.easyid3.EasyID3', Mock(return_value=self.dict))
-        patcher.start()
-        self.addCleanup(patcher.stop)
+    @property
+    def name(self):
+        fields = {'album': self.id3['album'],
+                  'artist': self.id3['artist'],
+                  'title': self.id3['title'],
+                  'ext': '.mp3'}
 
-    def test_canonical_name_no_track_number(self):
-        name = canonical_name.CanonicalName('test').name
-        self.assertEqual('test_artist/test_album/test_title.mp3', name)
+        grandparent_dir_format = "{artist!s}"
+        dir_format = "{album!s}"
+        file_format = "{title!s}{ext!s}"
 
-    def test_canonical_name_track_number(self):
-        self.dict['tracknumber'] = '1'
-        name = canonical_name.CanonicalName('test').name
-        self.assertEqual('test_artist/test_album/01 - test_title.mp3', name)
+        if 'compilation' in self.id3 and self.id3['compilation']:
+            grandparent_dir_format = "Various Artists"
+            file_format = "{artist!s} - " + file_format
+        try:
+            fields['track'] = int(re.match('\d+', str(self.id3['tracknumber'])).group())
+            file_format = "{track:02d} - " + file_format
+        except (KeyError, AttributeError):
+            pass
 
-    def test_canonical_name_compilation_no_track_number(self):
-        self.dict['compilation'] = True
-        name = canonical_name.CanonicalName('test').name
-        self.assertEqual('Various Artists/test_album/test_artist - test_title.mp3', name)
-
-    def test_canonical_name_compilation_track_number(self):
-        self.dict['compilation'] = True
-        self.dict['tracknumber'] = '02/10'
-        name = canonical_name.CanonicalName('test').name
-        self.assertEqual('Various Artists/test_album/02 - test_artist - test_title.mp3', name)
-
-if __name__ == '__main__':
-    unittest.main()
+        return os.path.join(
+            grandparent_dir_format, dir_format, file_format).format(**fields)
