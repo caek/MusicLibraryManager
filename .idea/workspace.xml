@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e16b8e4d-3207-4506-ac6e-b03a48c2a303" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canonical_name.py" afterPath="$PROJECT_DIR$/canonical_name.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_store.py" afterPath="$PROJECT_DIR$/file_store.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_canonical_name.py" afterPath="$PROJECT_DIR$/test_canonical_name.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_file_store.py" afterPath="$PROJECT_DIR$/test_file_store.py" />
     </list>
     <ignored path="MusicLibraryManager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="357" selection-end="357" vertical-scroll-proportion="0.46106556">
+            <state line="10" column="46" selection-start="261" selection-end="280" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -77,13 +77,53 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test_main.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.13245033">
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directory_enumerator.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/directory_enumerator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="file_store.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_store.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
+            <state line="19" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_file_store.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_file_store.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="30" selection-start="1981" selection-end="1981" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="case.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="830" column="0" selection-start="32164" selection-end="32164" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,10 +154,12 @@
       <list>
         <option value="$PROJECT_DIR$/test_mp3_file.py" />
         <option value="$PROJECT_DIR$/mp3_file.py" />
-        <option value="$PROJECT_DIR$/file_store.py" />
         <option value="$PROJECT_DIR$/test_canonical_name.py" />
         <option value="$PROJECT_DIR$/canonical_name.py" />
+        <option value="$PROJECT_DIR$/file_store.py" />
+        <option value="$PROJECT_DIR$/test_file_store.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/test_main.py" />
       </list>
     </option>
   </component>
@@ -265,6 +307,43 @@
       <ConfigurationWrapper RunnerId="PythonCover" />
       <method />
     </configuration>
+    <configuration default="false" name="Unittests in MainTest.test_main_calls_enumerator" type="tests" factoryName="Unittests" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="MusicLibraryManager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_main.py" />
+      <option name="CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="test_main_calls_enumerator" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="MusicLibraryManager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -302,16 +381,18 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python's test.Unittests in /Users/chaynes/projects/pycon/MusicLibraryManager" />
       <item index="1" class="java.lang.String" itemvalue="Python's test.Unittests in test_mp3_file" />
       <item index="2" class="java.lang.String" itemvalue="Python's test.Unittests in test_canonical_name" />
+      <item index="3" class="java.lang.String" itemvalue="Python's test.Unittests in MainTest.test_main_calls_enumerator" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python's test.Unittests in /Users/chaynes/projects/pycon/MusicLibraryManager" />
-        <item index="1" class="java.lang.String" itemvalue="Python's test.Unittests in test_canonical_name" />
-        <item index="2" class="java.lang.String" itemvalue="Python's test.Unittests in test_mp3_file" />
+        <item index="1" class="java.lang.String" itemvalue="Python's test.Unittests in MainTest.test_main_calls_enumerator" />
+        <item index="2" class="java.lang.String" itemvalue="Python's test.Unittests in test_canonical_name" />
+        <item index="3" class="java.lang.String" itemvalue="Python's test.Unittests in test_mp3_file" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +432,11 @@
       <created>1349361101573</created>
       <updated>1349361101573</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Charles: add canonical name calculator&#10;">
+      <created>1349362490747</created>
+      <updated>1349362490747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -359,7 +444,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998565" sideWeight="0.670412" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998565" sideWeight="0.670412" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -435,24 +520,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_file_store.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file_store.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mp3_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="12" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
@@ -489,11 +556,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="830" column="0" selection-start="32164" selection-end="32164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file_store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_file_store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="30" selection-start="1981" selection-end="1981" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directory_enumerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="357" selection-end="357" vertical-scroll-proportion="0.46106556">
+        <state line="10" column="46" selection-start="261" selection-end="280" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.13245033">
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
