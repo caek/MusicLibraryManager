@@ -1,4 +1,3 @@
-import io
 import file_store
 from mock import MagicMock, patch
 

@@ -1,5 +1,4 @@
 import hashlib
-import io
 import mp3_file
 
 __author__ = 'rlaycock'
